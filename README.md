@@ -5,7 +5,7 @@ Just some initial experimentation around running tinygrad in the browser - not f
 [Pyodide](https://github.com/pyodide/pyodide) is a port of CPython to WebAssembly/Emscripten. Pyodide makes it possible to install and run Python packages like tinygrad in the browser. It only supports CPU as of writing.
 
 #### Demo
-See [demos/pyodide](https://josephrocca.github.com/tinygrad.js/demos/pyodide).
+See [demos/pyodide](https://josephrocca.github.io/tinygrad.js/demos/pyodide).
 
 #### Build
 Just follow [the official out-of-tree Pyodide build instructions](https://pyodide.org/en/stable/development/building-and-testing-packages.html). As of writing you can just paste this in your terminal:
