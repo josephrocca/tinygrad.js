@@ -1,5 +1,5 @@
 # tinygrad.js
-Just some initial experimentation around running tinygrad in the browser - not for serious usage. If someone makes a serious attempt at a production-grade tinygrad.js, I'll link to their repo from here.
+Just some initial experimentation around running [tinygrad](https://github.com/geohot/tinygrad) in the browser - not for serious usage. If someone makes a serious attempt at a production-grade tinygrad.js, I'll link to their repo from here.
 
 ## Pyodide
 [Pyodide](https://github.com/pyodide/pyodide) is a port of CPython to WebAssembly/Emscripten. Pyodide makes it possible to install and run Python packages like tinygrad in the browser. It only supports CPU as of writing.
