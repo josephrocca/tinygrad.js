@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TinyGrad in the Browser via Pyodide</title>
+</head>
+<body>
+  <p>Open the browser console to see logs</p>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js"></script>
+  <script type="module">
+    let pyodide = await loadPyodide();
+    await pyodide.loadPackage("numpy");
+    await pyodide.loadPackage("https://files.catbox.moe/cjo4qr.whl");
+    console.log(pyodide.runPython(`
+      import sys
+      sys.version
+    `));
+    pyodide.runPython(`
+      from tinygrad.tensor import Tensor;
+      N = 128; a, b = Tensor.rand(N, N), Tensor.rand(N, N);
+      c = (a.reshape(N, 1, N) * b.permute(1,0).reshape(1, N, N)).sum(axis=2);
+      print((c.numpy() - (a.numpy() @ b.numpy())).mean())
+    `);
+  </script>
+</body>
+</html>
